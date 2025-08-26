@@ -41,7 +41,7 @@ ENT.SpawnHealth = 5000000
 ENT.WalkSpeed = 50
 ENT.RunSpeed = 85
 ENT.AccelerationSpeed = 1000
-ENT.DeathDropHeight = 100000
+ENT.DeathDropHeight = 2000
 ENT.InformRadius = 0
 
 -- default is 500, setting this lower means supercop will ignore low priority enemies and focus on players, unless they're blocking his path
