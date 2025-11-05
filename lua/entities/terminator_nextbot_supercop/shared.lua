@@ -566,6 +566,7 @@ function ENT:DoCustomTasks( defaultTasks )
         },
         ["shooting_handler"] = {
             StartsOnInitialize = true,
+            StopsWhenPlayerControlled = true,
             OnStart = function( self, data )
             end,
             BehaveUpdatePriority = function(self,data,interval)
@@ -717,6 +718,7 @@ function ENT:DoCustomTasks( defaultTasks )
         },
         ["movement_handler"] = {
             StartsOnInitialize = true,
+            StopsWhenPlayerControlled = true,
             OnStart = function( self, data )
                 data.wait = CurTime() + 0.5
 
