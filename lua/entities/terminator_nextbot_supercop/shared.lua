@@ -551,24 +551,22 @@ local function revolverCondition( me )
 
 end
 
+ENT.MyClassTask = {
+    EnemyFound = function( self, data )
+        self:Term_SpeakSentence( spottedEnemy, aliveEnem )
+
+    end,
+}
+
 function ENT:DoCustomTasks( defaultTasks )
     self.TaskList = {
         ["awareness_handler"] = defaultTasks["awareness_handler"],
         ["reallystuck_handler"] = defaultTasks["reallystuck_handler"],
         ["movement_wait"] = defaultTasks["movement_wait"],
         ["enemy_handler"] = defaultTasks["enemy_handler"],
-        ["supercop_handler"] = {
-            StartsOnInitialize = true,
-            EnemyFound = function( self, data )
-                self:Term_SpeakSentence( spottedEnemy, aliveEnem )
-
-            end,
-        },
         ["shooting_handler"] = {
             StartsOnInitialize = true,
             StopsWhenPlayerControlled = true,
-            OnStart = function( self, data )
-            end,
             BehaveUpdatePriority = function(self,data,interval)
                 local enemy = self:GetEnemy()
                 local wep = self:GetActiveLuaWeapon() or self:GetActiveWeapon()
@@ -718,7 +716,6 @@ function ENT:DoCustomTasks( defaultTasks )
         },
         ["movement_handler"] = {
             StartsOnInitialize = true,
-            StopsWhenPlayerControlled = true,
             OnStart = function( self, data )
                 data.wait = CurTime() + 0.5
 
