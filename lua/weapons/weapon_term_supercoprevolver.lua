@@ -139,7 +139,7 @@ function SWEP:BulletCallback( iteration, attacker, bulletTrace, dmginfo, directi
 
     direction = direction or bulletTrace.Normal
 
-    supercop_HandleDoor( self, bulletTrace )
+    terminator_Extras.Supercop_HandleDoor( self, bulletTrace )
 
     local penetrated = self:BulletPenetrate( iteration, attacker, bulletTrace, dmginfo, direction )
     if penetrated then return end

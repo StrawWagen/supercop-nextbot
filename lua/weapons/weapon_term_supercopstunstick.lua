@@ -109,7 +109,7 @@ function SWEP:DoDamage()
     end
     if tr.Hit then
 
-        supercop_HandleDoor( self, tr )
+        terminator_Extras.Supercop_HandleDoor( self, tr )
         local reallyMad = IsValid( owner ) and owner.IsReallyAngry and owner:IsReallyAngry()
 
         local hitEnt = tr.Entity

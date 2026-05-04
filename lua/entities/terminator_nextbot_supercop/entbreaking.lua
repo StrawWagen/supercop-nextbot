@@ -1,3 +1,6 @@
+
+if not terminator_Extras then return end
+
 local function LockBustSound( ent )
     ent:EmitSound( "doors/vent_open1.wav", 100, 80, 1, CHAN_STATIC )
     ent:EmitSound( "physics/metal/metal_solid_strain3.wav", 100, 200, 1, CHAN_STATIC )
@@ -38,7 +41,7 @@ local slidingDoors = {
 
 }
 
-function supercop_HandleDoor( maker, tr )
+function terminator_Extras.Supercop_HandleDoor( maker, tr )
     if CLIENT or not IsValid( tr.Entity ) then return end
     local door = tr.Entity
     if door.realDoor then
